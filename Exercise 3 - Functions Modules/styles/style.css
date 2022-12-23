@@ -1,0 +1,34 @@
+body {
+  margin: 1rem;
+  border: 2px solid red;
+  text-align: center;
+}
+body h1 {
+  color: green;
+  border: 2px solid "";
+  font-size: 32;
+  border-bottom: 2px solid blue;
+  margin-top: 2rem;
+  display: inline;
+}
+body section {
+  display: flex;
+  margin: 1rem;
+}
+body section article {
+  color: blue;
+  border: 2px solid green;
+  font-size: 1rem;
+  padding: 1rem 5px;
+}
+body section article:nth-child(odd) {
+  color: red;
+  border: 2px solid green;
+  font-size: 1rem;
+}
+body section.sectionFooter .footer {
+  color: green;
+  border: 2px solid blue;
+  font-size: 24px;
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */

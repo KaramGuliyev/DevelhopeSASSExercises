@@ -1,0 +1,9 @@
+// @mixin toRem($property, $size) {
+//     #{$property}: calc($size/16px) + rem;
+// } 
+//
+// I would like to use this but exercise says function and I couldn't able to make function like this one.
+
+@function toRem($size) {
+    @return calc($size / 16) + rem;
+}
