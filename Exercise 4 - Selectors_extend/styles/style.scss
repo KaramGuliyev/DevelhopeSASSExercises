@@ -1,0 +1,50 @@
+@use 'functions.scss';
+@import 'variables.scss';
+
+@mixin article-card($color, $border-color, $font-size: functions.toRem(16)) {
+    color: $color;
+    border: 2px solid $border-color;
+    font-size: $font-size;
+}
+
+body {
+    // @include toRem(margin, 32px);
+    margin: functions.toRem(16);
+    border: 2px solid $colorPrimary;
+    text-align: center;
+
+    %header {
+        @include article-card($color: $colorSecondary, $border-color: '', $font-size: 32);
+        border-bottom: 2px solid $colorTertiary;
+        margin-top: 2rem;
+        display: inline-block;
+    }
+
+    & h1,
+    & h2 {
+        @extend %header;
+    }
+
+    & h2 {
+        padding: 1rem;
+        border: 2px solid red;
+    }
+
+    section {
+        display: flex;
+        margin: functions.toRem(16);
+
+        article {
+            @include article-card($colorTertiary, $colorSecondary);
+            padding: 1rem 5px;
+        }
+
+        article:nth-child(odd) {
+            @include article-card($colorPrimary, $colorSecondary);
+        }
+        &.sectionFooter .footer {
+            @include article-card($colorSecondary, $colorTertiary, 24px);
+            width: 100%;
+        }
+    }
+}
